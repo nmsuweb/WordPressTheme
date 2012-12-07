@@ -1,0 +1,31 @@
+/*
+Columns: 3
+Main: Right
+Sidebars: Left, side-by-side
+-------------------------------------------------------------- */
+
+#container {
+	float: right;
+	margin: 0 0 0 -460px;
+	width: 100%;
+}
+
+#content {
+	margin: 0 0 40px 460px;
+	padding-right: 20px;
+}
+
+aside#sidebar1, aside#sidebar2 {
+	float: left;
+	overflow: hidden;
+	width: 180px;
+}
+
+aside#sidebar1 {
+	margin: 0 40px 0 0;
+	padding-left: 20px;
+}
+
+footer {
+	clear: both;
+}

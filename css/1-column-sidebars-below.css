@@ -1,0 +1,26 @@
+/*
+Columns: 1
+Main: Top, full-width
+Sidebars: Below, side-by-side
+-------------------------------------------------------------- */
+
+#content {
+	padding: 0 20px;
+}
+
+aside#sidebar1, aside#sidebar2 {
+	float: left;
+	margin-bottom: 40px;
+	overflow: hidden;
+	padding: 10px 0;
+	width: 46%;
+}
+
+aside#sidebar1 {
+	clear: both;
+	padding-right: 8%; 
+}
+
+footer {
+	clear: left;
+}

@@ -1,0 +1,1142 @@
+
+/* Colors (an attempt at consistency)
+ 
+NMSU crimson	   		#882345
+Dark crimson			#490513
+Background gray			#f7f7f7
+Foreground gray			#ededed
+Border gray				#ddd
+Shadow gray
+Text and dark gray		#333
+*/
+
+
+/* Page layout basics
+-------------------------------------------------------------- */
+
+html {
+	-webkit-font-smoothing: antialiased; /* maxvoltar.com/archive/-webkit-font-smoothing */
+}
+
+body {
+	background: #f7f7f7;
+	color: #444;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif; /* font-size=100% in the reset styles, set size in ems from here on */
+	text-align: center;
+	
+}
+
+#wrapper {
+	background: #fff;
+	margin: 0 auto;
+	text-align: left;
+	width: 1080px;
+	box-shadow: 0px 5px 15px #666;
+	-moz-box-shadow: 0px 5px 15px #666;
+	-webkit-box-shadow: 0px 5px 15px #666;
+	overflow:hidden /* Overflow removes the extra horizontal space in mobile view */
+}
+
+header,
+footer,
+#copyright {
+	padding: 0 60px;
+}
+
+#main {
+	padding: 0 40px;
+}
+
+#main div:first-child {
+	margin-bottom: 20px; /* Maintains a suitable margin if the feature image and/or breadcrumbs are not in use */	
+}
+	
+header + #main { /* Shifts the content area up into the header if the horizontal navigation is not in use */
+	margin-top: -90px;	
+}
+
+#main + #breadcrumbs ul {
+	margin-top: 20px;
+	height: 220px;
+}
+
+#container {
+	background: #fff;
+	}	
+
+/* For specific positioning of the main content block and sidebars, 
+there are six layout options to choose from:
+
+	1-column-sidebars-below.css
+	2-columns-sidebars-left.css
+	2-columns-sidebars-right.css
+	3-columns-sidebars-both.css
+	3-columns-sidebars-left.css
+	3-columns-sidebars-right.css
+	
+Flexible layout method adapted from themeshaper.com/2009/06/22/wordpress-themes-templates-tutorial/	
+*/
+
+footer {
+	background: #ededed;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+.footer-column {
+	display: inline-block;
+	width: 280px;
+	margin-right: 54px;
+}
+
+.footer-column:last-child {
+	margin-right: 0;
+}
+
+footer p {
+	font-size: 0.75em;
+}
+
+#copyright {
+	background: #882345;
+}
+
+#copyright p {
+	color: #fff;
+	font-size: 0.7em;
+	padding: 1em 0;
+}
+
+
+/* Layout helper classes
+-------------------------------------------------------------- */
+
+.clearfloat {
+	clear: both;
+	font-size: 1px;
+	height: 0;
+	line-height: 0px;
+}
+
+.visually-hidden { /* snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+
+/* Anchors, typography, images, figures, tables
+-------------------------------------------------------------- */
+
+a,
+a:link,
+a:visited {
+	color: #490513;	
+}
+
+a:active,
+a:hover {
+	color: #882345;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	margin: 1.25em 0 0.5em 0;
+}
+
+h1 {
+	font-size: 1.35em;
+	margin-top: 0;
+}
+
+.sub-heading { /* Recommended for use only on h1 */
+	display: block;
+	font-size: 0.8em;
+	font-weight: normal; 
+	margin-top: 0.5em;
+}
+
+h2 {
+	font-size: 1.25em;
+}
+
+h3 {
+	font-size: 1.1em;
+}
+
+h4 {
+	font-size: 1em;
+}
+
+h5 {
+	font-size: 0.9em;
+}
+
+h6 {
+	font-size: 0.8em;
+}
+
+p,
+dd,
+dt,
+li,
+td,
+th {
+	font-size: 0.8em;
+	line-height: 1.75em;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+	
+em,
+i {
+	font-style: italic; 
+}	
+
+p+p,
+p+ul,
+p+ol,
+ul+p,
+ol+p,
+ul+ul,
+ol+ol,
+ul+ol,
+ol+ul,
+p+dl,
+dl+p,
+dd+dd {
+	margin: 1em 0;
+}		
+	
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin-left: 2.5em;
+}
+
+li {
+	margin-left: 2.5em;
+}
+	
+li ul,
+li ol {
+	font-size: 1.25em; /* Resets a nested listed item back to the baseline font size - .64em (the product of .8em x .8em) x 1.25 = .8em */
+}
+	
+ol ol {
+	list-style-type: upper-alpha;
+}
+	
+ol ol ol {
+	list-style-type: lower-alpha;
+}
+
+ol ol ol ol {
+	list-style-type: upper-roman;
+}
+
+ol ol ol ol ol {
+	list-style-type: lower-roman;
+}
+
+blockquote {
+	border-left: 1px solid #ddd;
+	font-style: italic;
+	margin: 1em 2.5em;
+	padding-left: 1em; 
+}
+	
+address {
+	border-bottom: 1px solid #ddd;
+	font-size: 0.8em;
+	line-height: 1.5em;
+	margin: 1em 0;
+	padding-bottom: 1em;
+}	
+	
+pre {
+	font-family: monospace;
+	line-height: 1.5em;
+	margin: 1em 0;
+  	white-space: pre-wrap;       /* css-3 */
+  	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  	white-space: -pre-wrap;      /* Opera 4-6 */
+  	white-space: -o-pre-wrap;    /* Opera 7 */
+  	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+code {
+	color: #039;
+	display: block;
+	font-family: monospace;
+	line-height: 1.5em;
+	margin: 1em 0;
+}
+
+sub,
+sup {
+	font-size: 0.7em;
+	height: 0;
+	line-height: 1;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	top: 0.5ex;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+img {
+	-ms-interpolation-mode: bicubic; /* css-tricks.com/ie-fix-bicubic-scaling-for-images */
+}
+	
+figure {
+	display: table;
+	margin: 0;
+	width: 1px; /* www.lifeathighroad.com/web-development/forcing-to-wraps-to-the-width-of-an-image-using-css-only/ */
+}
+
+.figure-right {
+	float: right;
+	margin-left: 1em;
+}
+
+.figure-left {
+	float: left;
+	margin-right: 1em;
+}
+
+.figure-bordered {
+	border: 1px solid #ddd;
+	box-shadow: 0px 4px 6px #ccc;
+	-moz-box-shadow: 0px 4px 6px #ccc;
+	-webkit-box-shadow: 0px 4px 6px #ccc;
+	padding: 0.5em;
+}			
+
+figcaption {
+	font-size: 0.75em;
+	font-style: italic;
+	line-height: 1.5em;
+	margin-top: 0.5em;
+}
+
+table {
+	border: 1px solid #ddd;
+	margin: 1em 0;
+}	
+	
+tr {
+	border: 1px solid #ddd;
+}		
+	
+td, th {
+	border: 1px solid #ddd;
+	padding: 0.5em 1em;
+}
+
+th {
+	font-weight: bold;
+}
+	
+tfoot td {
+	font-size: 0.75em;
+	font-style: italic;
+}	
+
+caption {
+	font-size: 1em;
+	margin: 0.25em 0;
+}
+
+.striped tr:nth-child(even) { /* Dynamic table striping - css-tricks.com/how-nth-child-works */
+	background-color: #ededed;
+}
+
+
+/* Header
+-------------------------------------------------------------- */
+
+header {
+	background: #882345 url("../img/swoosh3.png") no-repeat 0 60px;
+	height: 270px;
+}
+
+header h1 {
+	color: #fff;
+	font-size: 1.125em;
+	line-height: 1.5em;
+	margin-top: 0;
+	width: 320px;
+}
+
+#tagline {
+	color: #fff;
+	width: 320px;
+	}
+
+#branding {
+	float: right;
+	margin-right: -60px;
+}
+
+img#logo {
+	float: left;
+	margin-top: 36px;
+}
+
+#masthead {
+	float: left;
+	margin-top: -3px;
+	margin-left: 20px;
+}
+
+#masthead a:link,
+#masthead a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+#masthead a:active,
+#masthead a:hover {
+	border-bottom: 1px solid;
+}
+
+#search {
+	float: right;
+	margin-top: 54px;
+}
+
+#search input[type="text"] {
+	background: #fff url("../img/search-white.png") no-repeat 10px 4px;
+	border: 1px solid #ddd;
+	color: #444;
+	border-radius: 16px;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+	outline: none;
+	padding: 4px 12px 4px 36px;
+	width: 150px;
+}
+
+/* Navigation (horizontal menu)
+-------------------------------------------------------------- */
+
+nav#horizontal {
+	background: #d1d2d3;
+	background: -moz-linear-gradient(top, #ffffff, #d1d2d3);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#d1d2d3));
+	position: relative;
+	margin: -90px 30px 0 30px;
+	text-align: center;
+	z-index: 30;
+}
+
+#left-wraparound {
+	border-top: 10px solid #999;
+	border-left: 10px solid transparent;
+	position: absolute;
+	left: 0;
+}
+
+#right-wraparound {
+	border-top: 10px solid #999;
+	border-right: 10px solid transparent;
+	position: absolute;
+	right: 0;
+}
+
+/* IE-specific css for #menu-bar */
+.ie7 nav#horizontal {
+	background: url("../img/menu-background.png") repeat-x;
+	height: 32px;
+}
+
+.ie8 nav#horizontal,
+.ie9 nav#horizontal {
+	background: url("../img/menu-background.png") repeat-x;
+}
+/* ----------- */
+
+#horizontal-menu {
+	display: inline-block;	
+}
+
+#horizontal-menu li {
+	border-left: 1px solid #ccc;
+	display: inline-block;
+	float: left;
+	margin-bottom: -1px;
+	margin-left: 0;
+}
+
+#horizontal-menu a:link,
+#horizontal-menu a:visited {
+	display: inline-block;
+	text-decoration: none;
+	padding: .5em 1em;
+}
+
+#horizontal-menu a:active,
+#horizontal-menu a:hover {
+	background: #fff;
+}
+
+#horizontal-menu li:hover .drop {
+	background: #fff;
+	color: #882345;
+}
+
+#horizontal-menu li:last-child {
+	border-right: 1px solid #ccc;
+}
+
+/* Basic drop-down menus for the horizontal navigation */
+
+#horizontal-menu li ul  {
+	left: -999px;
+	position:absolute;
+	width: 150px;
+	z-index: 99999;
+}
+
+#horizontal-menu li ul li {
+	border-left: none;
+}
+
+#horizontal-menu li ul li:first-child {
+	border-top: none;
+}
+
+#horizontal-menu li ul li:last-child {
+	border-right: none;
+}
+
+#horizontal-menu li:hover ul {
+	left: auto;
+}
+
+#horizontal-menu li ul li a {
+	background:#fff;
+	left: auto;
+	text-align: left;
+	width: 150px;
+}
+
+#horizontal-menu li:hover {
+	background: #fff;
+	color: #882345;
+}
+
+
+/* Navigation (vertical menu)
+-------------------------------------------------------------- */
+
+nav#vertical {
+	margin: 0 0;
+}
+
+ul#vertical-menu li {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+#vertical-menu li a {
+	border-top: 1px solid #ddd;
+	line-height: 1.5em;
+	padding: 0.5em 1em;
+}
+
+#vertical-menu a:link,
+#vertical-menu a:visited {
+	text-decoration: none;
+	display: block;
+}
+
+#vertical-menu a:active,
+#vertical-menu a:hover {
+	background: #ededed;
+}
+
+#vertical-menu ul li a {
+	border: none;
+	padding-left: 1em;
+}
+
+#vertical-menu ul li a:before {
+	content: "\2023\0020";
+	}
+
+#vertical-menu li ul {
+	display: none;
+	list-style-type: none;
+	margin-top: 0;
+}
+
+ul#vertical-menu li:last-child {
+	border-bottom: 1px solid #ddd;
+}
+
+
+/* Breadcrumbs
+-------------------------------------------------------------- */
+
+#breadcrumbs {
+	background: #fff;
+	overflow: auto;
+	padding: 20px;
+}
+
+#breadcrumbs ul {
+	border-bottom: 1px dotted #ddd;
+	float: left;
+	padding-bottom: 10px;
+	width: 100%;
+}
+
+#breadcrumbs li {
+	float: left;
+	font-size: 0.7em;
+	list-style-type: none;
+	margin-left: 0;
+	padding-right: 0.5em;
+}
+
+#breadcrumbs li:after {
+	content: "\00BB\0020";
+	padding-left: 0.5em;
+}
+
+#breadcrumbs li:first-child:before {
+	content: "You are here:";
+	padding-right: 0.5em;
+}
+
+#breadcrumbs li:last-child:after {
+	content: none;
+}
+
+/* Main content
+-------------------------------------------------------------- */
+
+#feature {
+	background: #fff;
+	border: 20px solid #fff;
+	box-shadow: 0px 4px 6px #ccc;
+	-moz-box-shadow: 0px 4px 6px #ccc;
+	-webkit-box-shadow: 0px 4px 6px #ccc;
+	z-index: 10;
+}
+
+/* For a feature block with an image on the left and text on the right. */
+
+.feature-plus-text {
+	float: left;
+}
+
+.feature-plus-text img {
+	float: left;
+	margin-right: 20px;
+}
+
+#slideshow-container {
+	margin-top: -16px; /* Compensates for the space created by the relatively positioned #slideshow-page */
+}
+
+#slideshow {
+	height: 384px;
+	width: 920px;
+}
+
+.slide {
+	background: #faf0d8;
+	margin-bottom: -2px;
+}
+
+.slide-image {
+	float: left;
+	width: 576px;
+}
+
+.slide-text {
+	background: #faf0d8;
+	color: #882345;
+	float: left;
+	padding: 30px;
+	width: 284px;
+}
+
+.slide-headline {
+	font: bold 1.5em/1.5em Tahoma, Geneva, sans-serif;
+}
+
+.slide-excerpt {
+	font: bold 1em/1.5em Tahoma, Geneva, sans-serif;
+	margin-top: 1em;
+}
+
+.slide-link {
+	font-size: 0.8em;
+	margin-top: 1em;
+}
+
+#slideshow-pager {
+	left: 606px;
+	position: relative;
+	top: 360px;
+	width: 284px;
+	z-index: 20;
+}
+
+#slideshow-pager .pager-active {
+	color: #fff;
+	background: #882345;
+}
+
+#slideshow-pager a:link,
+#slideshow-pager a:visited {
+	font-size: 0.8em;
+	padding: 0.25em 0.5em;
+	text-decoration: none;
+}
+
+#slideshow-pager a:active,
+#slideshow-pager a:hover {
+	background: #882345;
+	color: #fff;
+}
+
+.bx-next {
+	position: absolute;
+	right: -16px;
+	top: 180px;
+}
+
+.bx-prev {
+	position: absolute;
+	left: -16px;
+	top: 180px;
+}
+
+
+/* Columns/link blocks on www.nmsu.edu
+-------------------------------------------------------------- */
+
+h2.fancy-header {
+	margin-bottom: 20px;
+}
+
+.fancy-header {
+	background-color: #882345;
+	background: -moz-linear-gradient(top, #5C1230, #882345);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5C1230), to(#882345));
+	color: #fff;
+	font: bold 1em/1em Tahoma, Geneva, sans-serif;
+	margin-top: -6px;
+	padding: 0.5em 1em;
+	position: relative;
+}
+
+.fancy-header:after {
+	border: 10px solid transparent;
+	border-top-color: #882345;
+	content: ' ';
+	left: .75em;
+	position: absolute;
+	top: 100%;
+}
+
+.columns {
+	overflow: hidden;
+	width: 960px;
+}
+
+.columns div:last-child {
+	margin-right: 0;
+}
+
+.four-columns div {
+	float: left;
+	margin-right: 32px;
+	width: 216px;
+	
+}
+
+.news-column {
+	margin-top: 0; /* Compensates for the 6 pixels of negative margin in .fancy-header */
+}
+
+.news-column-extras {
+	margin: 1em 0;
+}
+
+.news-column-rss {
+	background: url("../img/icn_rss.png") no-repeat;
+	padding: 4px 0 4px 24px;
+}
+
+
+/* Utility classes
+-------------------------------------------------------------- */
+
+/* Icon lists */
+
+.icons ul {
+	display: inline;
+	list-style-type: none;
+}
+
+.icon-list li {
+	float:left;
+	list-style-type: none;
+	margin: 0 0.75em 0 0;
+}
+
+.icon-list li:last-child {
+	margin-right: 0;
+}
+
+/* Call to action buttons */
+
+.call-to-action-button {
+	background: #fff;
+	background: -moz-linear-gradient(top,  #fff,  #ededed);
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+	border: solid 1px #b7b7b7;
+	border-radius: 0.4em;
+	-moz-border-radius: 0.4em;
+	-webkit-border-radius: .4em; 
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	color: #606060;
+	cursor: pointer;
+	display: inline-block;
+	/*font-family: Tahoma, Geneva, sans-serif;*/
+	font-size: 0.8em;
+	/*font-weight: bold;*/
+	margin: 0.5em 0;
+	outline: none;
+	padding: 0.5em 1em;
+	text-align: center;
+	text-decoration: none;
+}
+
+.call-to-action-button:hover {
+	text-decoration: none;background: #fff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#fff));
+	background: -moz-linear-gradient(top,  #ededed,  #fff);
+}
+
+.call-to-action-button:active {
+	position: relative;
+	top: 1px;
+}	
+.xl-button {
+	font-size: 1em;
+	}
+
+/* Message boxes */
+/* www.jankoatwarpspeed.com/post/2008/05/22/CSS-Message-Boxes-for-different-message-types.aspx */
+	
+.info, .success, .warning, .error, .validation {
+	background-repeat: no-repeat;
+	background-position: 1em center;
+	border: 1px solid;
+	border-radius: 2px;
+	margin: 1em 0;
+	padding: 1em 1em 1em 4em;
+	width: 50%;
+}
+
+.info {
+	background-color: #e5eaf5;
+	background-image: url("../img/Knob-Info2.png");
+	color: #004286;
+}
+
+.success {
+	background-color: #dff2bf;
+	background-image: url("../img/Knob-Valid-Green2.png");
+	color: #4f8a10; 
+}
+
+.warning {
+	background-color: #feefb3;
+	background-image: url("../img/Knob-Attention.png");
+	color: #9f6000;
+}
+
+.error {
+	background-color: #ffbaba;
+	background-image: url("../img/Knob-Cancel.png");
+	color: #d8000c;
+}
+
+.validation {
+	background-color: #ffccba;
+	background-image: url("../img/Knob-Attention2.png");
+	color: #d63301;
+}
+
+
+/* Stuff that still needs to be cleaned up
+-------------------------------------------------------------- */
+
+
+/* Mega menu button styles */
+.button {
+	display: inline-block;
+	color: #666;
+	font-size: 12px;
+	/* Background Gradients */
+	background: #d1d2d3;
+	background: -moz-linear-gradient(top, #ffffff, #d1d2d3);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#d1d2d3));
+	/* Rounded corners */
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+	padding-top: 6px;
+	padding-right: 12px;
+	padding-bottom: 6px;
+	padding-left: 12px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: bold;
+	border: 1px solid #999;
+	margin: 0 0 10px 0;
+	cursor: pointer;
+}
+
+.button:hover {
+	color: #882345;
+	text-decoration: none;
+}
+
+/* CSS sprites for icon rollover effect */
+#fb {
+	width: 32px;
+	height: 32px;
+	xtext-decoration: none;
+	display: block;
+	background: url("../img/icn_facebook2.png");
+	background-position: 0px 0px;
+}
+
+#fb:hover, #fb:active {
+	background-position: 0px 32px;
+}	
+
+/* CSS for form elements */
+#stylized fieldset {
+	border: solid 1px #ddd;
+	background: #fff;
+	padding: 1em 0;
+	width: 400px;
+	margin: 1em 0;
+}
+
+#stylized legend {
+	padding: 0.25em 0.5em;
+	background: #fff;
+	margin-left: 1em;
+	}
+
+#stylized label {
+	display: block;
+	text-align :right;
+	width: 100px;
+	float: left;
+	font-size: 0.8em;
+}
+
+#stylized input {
+	float: left;
+	font-size: 0.8em;
+	padding: 0.25em;
+	border: solid 1px #ddd;
+	width: 200px;
+	margin: 0 0 1em 1em;
+}
+
+#stylized button {
+	clear: both;
+	margin-left: 8.75em;
+	width: 6em;
+	height: 2em;
+	background: #ccc;
+	text-align: center;
+	color: #333;
+	font-size: 0.8em;
+}
+
+
+
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Oswald); /*-------- For Fancy Date Display ----- */
+
+/* This is for 3 columns in 1 column */
+
+.wrapper{width:100%;overflow:hidden;position:relative;}
+.threecol {float: left; display: inline; margin-left:5px; margin-right:5px; width: 190px;}
+.alpha { margin-left: 0; }
+.omega { margin-right: 0; }
+.titlepad{
+	padding-top: 16px;
+	padding-right: 0;
+	padding-bottom: 0px;
+	padding-left: 0;
+}
+.titlepad3{ padding:0 0 18px 0 !important;}
+.padright2{ padding-right:15px;}
+.padbot2{ padding-bottom:25px;}
+.padRT{ padding-bottom:30px;}
+.img-box { 
+	background:#f4f4f4;
+	display:inline-block;
+	padding:8px;
+	box-shadow: 0 20px 25px -25px rgba(0,0,0,1);
+	-webkit-box-shadow: 0 20px 25px -25px rgba(0,0,0,1);
+	-moz-box-shadow: 0 20px 25px -25px rgba(0,0,0,1);
+	margin-bottom:32px;
+}
+
+/* Fancy Date Buttons and captions */
+
+.date {
+	display:block;
+	font-size:1.0em;
+	line-height:1.5em;
+	color:#fff;
+	box-shadow:0 1px 2px rgba(0,0,0,.4);
+	width:58px;
+	height:51px;
+	float:left;
+	text-align:center;
+	border-radius:3px;
+	background: #882345;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#882345), to(#943251));
+	background: -webkit-linear-gradient(#882345, #943251);
+	background: -moz-linear-gradient(#882345, #943251);
+	background: -ms-linear-gradient(#882345, #943251);
+	background: -o-linear-gradient(#882345, #943251);
+	background: linear-gradient(#882345, #943251);
+	-pie-background: linear-gradient(#882345, #943251);
+	font-family: 'Oswald', sans-serif;
+	text-transform:uppercase;
+	margin-top: 3px;
+	margin-right: 14px;
+	margin-bottom: 0;
+	margin-left: 1px;
+	padding-top: 7px;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+}
+.date span{ display:block; margin-top:-6px;}
+.date:hover { 
+	text-decoration:none;
+	background: #B7D300;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#EAABOD), to(#f5b111));
+	background: -webkit-linear-gradient(#EAABOD, #f5b111);
+	background: -moz-linear-gradient(#EAABOD, #f5b111);
+	background: -ms-linear-gradient(#EAABOD, #f5b111);
+	background: -o-linear-gradient(#EAABOD, #f5b111);
+	background: linear-gradient(#EAABOD, #f5b111);
+	-pie-background: linear-gradient(#EAABOD, #f5b111);
+}
+.extra-wrap {
+	overflow:hidden;
+	display:block;
+	font-size: .75em;
+}
+
+
+/* Blockquotes */
+
+.quote blockquote{
+	background:#dcd9d6;
+	border-radius:3px;
+	padding:25px 20px 30px 30px;
+	margin:9px 0 33px;
+	position: relative;
+	font-style:italic;
+	font-size: .75em;
+	width:100px;
+}
+
+.quote blockquote span {
+	display:block;
+	background:url(../img/quotes.png) 0 0 no-repeat;
+	width:21px;
+	height:21px;
+	position:absolute;
+	bottom:-21px;
+	left:30px;
+}
+.link3{
+	display:inline;
+	font-size:14px;
+	color:#882345;
+	text-transform:uppercase;
+	line-height:1.2em; font-family: 'Oswald', sans-serif;
+	font-weight:normal;-webkit-transition:all 0.5s ease;
+	-moz-transition:all 0.5s ease;
+	-o-transition:all 0.5s ease;
+	transition:all 0.5s ease;
+}
+.link3 span{
+	color:#666666;
+}
+	.link3:hover{ text-decoration:none; color:#42312a}
+
+
+/* Head Image with text to right */
+
+.toppicture{width:860px;}
+.img-box-toppicture{
+	margin-bottom:52px;
+	margin-top: -6px;
+	}
+.titlepad{
+	padding-top: 16px;
+	padding-right: 0;
+	padding-bottom: 0px;
+	padding-left: 0;
+}
+.layout-container { position: relative; width: 930px; margin: 0 auto; padding: 0; background:#FFF;}
+.fullwidth-toppicture { float: left; display: inline; margin-left:5px; margin-right:5px; width: 950px; padding-right:40px;}
+.fleft{float:left}
+.imgindent{ margin:6px 16px 0 1px;}
+
+/* To Top Arrow */
+#toTop{
+	background: url(http://saem.nmsu.edu/wwwdev/mc/NMSUtemplates/images/top-arrow.png) 0 0 no-repeat;
+	width:32px;
+	height:57px;
+	position:fixed;
+	right:0;
+	bottom:60px;
+	z-index:99;
+	padding-right: 60px;
+	display:none;
+}

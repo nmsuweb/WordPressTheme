@@ -1,0 +1,148 @@
+
+/* Mobile CSS Document  For main support of responsive design*/
+.fancy {}
+.mobile {width: 100%; background-color:#FFFFFF}
+
+
+/* Nested column classes for break down of multiple columns inside #content area.  Alpha indicates the first column in a row. Omega incidates the last column in a row.*/
+
+ .alpha { 
+ margin-left:0;
+ }
+ 
+ 
+ .omgea {
+margin-right:0;
+}
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* Styles */
+#branding {display:none}
+#masthead img{display:none}
+header #logo {float: none; !important background-position:center;  padding-bottom:0px;  margin-left: 50px;}
+header #logo a{display:block; width: 165 px; margin-top: -10px;}
+header {width: 100%; padding-bottom:50px;}
+#search {
+	float: right;
+	margin-top: -20px;
+	padding-bottom: 15px;
+	margin-right: 265px;
+}
+
+
+#wrapper {width: 100%}
+#feature {display:none;}
+.fourcolumns div {width: 100%; margin:0;}
+.fancy {display: none;} /* Removes image from mobile view */
+.columns {width: 400px; margin: 0;}
+#vertical-menu {width: 100%;}
+.fancy-header {margin-top: 25px}
+#left-wraparound {display:none}
+#right-wraparound {display:none}
+
+
+}
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (max-width : 639px) {
+/* Styles */
+#branding {display:none}
+#masthead img{display:none}
+header #logo {float: none; !important background-position:center;  margin-left: 50px; padding-bottom:25px;}
+header #logo a{display:block; width: 165 px; margin-top: -10px;}
+#search {
+	float: left;
+	margin-top: 0px;
+	padding-bottom: 15px;
+	
+
+}
+header {padding-bottom:50px;}
+#wrapper {width: 100%}
+#feature {display:none;}
+.fourcolumns div {width: 100%; margin:0;}
+.columns {width: 300px; margin: 0;}
+.fancy {display: none;} /* Removes image from mobile view */
+.fancy-header {margin-top: 25px}
+#left-wraparound {display:none}
+#right-wraparound {display:none}
+#vertical-menu {width: 100%;}
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) 
+and (orientation : portrait){
+	/* Styles */
+header h1.logo a {width: 190px; margin-top: -50px;}
+
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (min-device-width : 640px)
+and (max-width : 767px) {
+/* Styles */
+header {padding-bottom:0px;}
+header #logo a{display:block; width: 165 px;}
+#masthead {padding-top: 10px;}
+
+#branding {float: right; width: 400px; height: 34px;}
+#search {
+	float: left;
+	margin-top: 0px;
+	margin-left: 20px;
+	padding-bottom: 15px;
+}
+/*.columns {width: 600px; margin: 0;}
+*/#feature {display:none;}
+/*.news-column-extras { padding-bottom:0px}*/
+#wrapper {width: 100%}
+#left-wraparound {display:none}
+#right-wraparound {display:none}
+
+/*#slideshow {
+	height: 196px;
+	width: 470px;
+}
+
+.slide {
+	background: #faf0d8;
+	margin-bottom: -2px;
+}
+
+.slide-image {
+	float: left;
+	width: 282px;
+}
+
+.slide-text {
+	background: #faf0d8;
+	color: #882345;
+	float: left;
+	padding: 30px;
+	width: 400px;
+}
+
+.slide-excerpt {
+	margin-top: 1em;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: .8em;
+	line-height: 1.5em;
+	font-weight: bold;
+}
+#slideshow-pager {
+	display:none;
+}
+
+*/
+
+}
+
+

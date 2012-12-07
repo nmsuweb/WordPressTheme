@@ -1,0 +1,42 @@
+/*
+Columns: 2
+Main: Left
+Sidebars: Right, stacked
+-------------------------------------------------------------- */
+
+#container {
+	float: left;
+	margin: 0 -280px 0 0;
+	width: 100%;
+}
+
+header {
+	height: 180px;
+	}
+
+nav#horizontal {
+	visibility: hidden;
+}
+
+#main {
+	margin-top: 90px;
+	}
+
+#content {
+	margin: 0 280px 40px 0;
+}
+
+aside#sidebar1,
+aside#sidebar2 {
+	float: right;
+	overflow: hidden;
+	width: 240px;
+}
+
+aside#sidebar2 {
+	clear: right;
+} 
+
+footer {
+	clear: both;
+}
