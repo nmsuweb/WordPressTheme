@@ -1,22 +1,15 @@
 /*   
-Theme Name: NMSU
+Theme Name: nmsu_testing2
 Theme URI:
-Description: An NMSU branded, search engine optimized website framework for WordPress.
-Author: Phillip Johnson, NMSU Student Affairs and Enrollment Management
+Description: An NMSU branded, search engine optimized website framework for WordPress. FOR TESTING
+Author: NMSU Campus Web Group
 Author URI:
-Version: 1.0
+Version: 0.8
 Tags: nmsu, new mexico state university
 */
 
-/*
+
 @import url("css/reset.css");
 @import url("css/base.css");
 @import url("css/drop-down.css");
 @import url("css/mobile.css");
-*/
-
-/* Delete all Below this line and uncomment above */
-@import url("http://saem.nmsu.edu/wwwdev/consolidated/css/reset.css");
-@import url("http://saem.nmsu.edu/wwwdev/consolidated/css/base.css");
-@import url("http://saem.nmsu.edu/wwwdev/consolidated/css/drop-down.css");
-@import url("http://saem.nmsu.edu/wwwdev/consolidated/css/mobile.css");

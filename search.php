@@ -2,6 +2,7 @@
         
                 <div id="container">    
                         <div id="content">
+
                         
 <?php if ( have_posts() ) : ?>
                                 

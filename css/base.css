@@ -1140,3 +1140,10 @@ h2.fancy-header {
 	padding-right: 60px;
 	display:none;
 }
+
+/* Widget styles */
+.header-widget{
+	margin-top: -154px;
+	float: right;
+	
+}

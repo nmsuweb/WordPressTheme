@@ -18,9 +18,10 @@
     <meta http-equiv="content-type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
      
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
-    
 
-		<?php /* $assignCSS=get_bloginfo('template_directory'); ?>
+     
+
+		<?php $assignCSS=get_bloginfo('template_directory'); ?>
 		<?php if ( is_page_template('1col-page.php')) { 
 			print "<link rel='stylesheet' type='text/css' href='$assignCSS/css/1-column-sidebars-below.css' />";
 			 } 
@@ -38,28 +39,8 @@
 			} 
 		else { 
 			print "<link rel='stylesheet' type='text/css' href='$assignCSS/css/2-columns-sidebars-right.css' />"; 
-			 } */ ?>
-    
-<!-- *********** Remove this and un-comment above ********** -->
-<?php  $assignCSS='http://saem.nmsu.edu/wwwdev/consolidated'; ?>
-    <?php if ( is_page_template('1col-page.php')) { 
-			print "<link rel='stylesheet' type='text/css' href='$assignCSS/css/1-column-sidebars-below.css' />";
-			 } 
-		elseif ( is_page_template('2col-sb-left-page.php')) { 
-			print "<link rel='stylesheet' type='text/css' href='$assignCSS/css/2-columns-sidebars-left.css' />";
-			} 
-		elseif ( is_page_template('3col-sb-both-page.php')) { 
-			print "<link rel='stylesheet' type='text/css' href='$assignCSS/css/3-columns-sidebars-both.css' />";
-			} 
-		elseif ( is_page_template('3col-sb-left-page.php')) { 
-			print "<link rel='stylesheet' type='text/css' href='$assignCSS/css/3-columns-sidebars-left.css' />";
-			} 
-		elseif ( is_page_template('3col-sb-right-page.php')) { 
-			print "<link rel='stylesheet' type='text/css' href='$assignCSS/css/3-columns-sidebars-right.css' />";
-			} 
-		else { 
-			print "<link rel='stylesheet' type='text/css' href='$assignCSS/css/2-columns-sidebars-right.css' />"; 
 			 } ?>
+    
 
      
     <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
@@ -93,6 +74,15 @@
           <a onClick="document.getElementById('search').submit()"></a>
         </fieldset>
       </form> -->
+      
+<!-- #header_widget -->
+<?php if ( is_sidebar_active('header_widget') ) : ?>
+	<?php dynamic_sidebar('header_widget'); ?>
+	<?php endif; ?>
+
+
+
+
     </header>
     <nav id="horizontal"> 
     <div class="visually-hidden"><a href="#content" title="<?php _e( 'Skip to content', 'NMSU' ) ?>"><?php _e( 'Skip to content', 'NMSU' ) ?></a></div>
@@ -106,8 +96,8 @@
     </nav>
     <div id="main">
     	
-      <div id="feature"> <img src="<?php bloginfo('template_directory'); ?>/img/swim.jpg" width="960" height="480"> </div>
-      <!-- #feature -->
+     <div id="feature"> <img src="<?php bloginfo('template_directory'); ?>/img/swim.jpg" width="960" height="480"> </div>
+    <!-- #feature -->
 	
         <?php if(function_exists(simple_breadcrumb)) {simple_breadcrumb();} ?>
       
