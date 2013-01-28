@@ -1,13 +1,12 @@
 /*   
 Theme Name: NMSU WordPress Theme
-Theme URI:
-Description: An NMSU branded, search engine optimized website framework for WordPress. FOR TESTING
+Theme URI: http://www.nmsu.edu
+Description: An NMSU branded, search engine optimized website framework for WordPress.
 Author: NMSU Campus Web Group
-Author URI:
-Version: 0.9
-Tags: nmsu, new mexico state university
+Author URI: http://wptheme.nmsu.edu
+Version: 1.0.0
+Tags: nmsu, new mexico state university, brand-refresh, multi-column, custom menus, theme options panel
 */
-
 
 @import url("css/reset.css");
 @import url("css/base.css");

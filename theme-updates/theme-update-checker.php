@@ -19,8 +19,8 @@ if ( !class_exists('ThemeUpdateChecker') ):
  * @access public
  */
 class ThemeUpdateChecker {
-	public $theme = 'nmsu_testing';              //The theme associated with this update checker instance.
-	public $metadataUrl = 'http://saem.nmsu.edu/theme_updates/updatefile.json';        //The URL of the theme's metadata file.
+	public $theme = 'nmsu_theme';              //The theme associated with this update checker instance.
+	public $metadataUrl = 'http://wptheme.nmsu.edu/download/updatefile.json';        //The URL of the theme's metadata file.
 	public $enableAutomaticChecking = true; //Enable/disable automatic update checks.
 	
 	protected $optionName = '';      //Where to store update info.
