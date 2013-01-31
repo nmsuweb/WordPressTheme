@@ -116,8 +116,8 @@ add_action('init','add_search_params');
 //Initialize the update checker.
 require 'theme-updates/theme-update-checker.php';
 $example_update_checker = new ThemeUpdateChecker(
-    'nmsu_testing',
-    'http://saem.nmsu.edu/theme_updates/updatefile.json'
+    'nmsu_theme',
+    'http://wptheme.nmsu.edu/download/updatefile.json'
 );
 
 /*

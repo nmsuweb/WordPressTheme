@@ -10,7 +10,7 @@
         if ( is_single() ) { single_post_title(); }       
         elseif ( is_home() || is_front_page() ) { bloginfo('name'); print ' | '; bloginfo('description'); get_page_number(); }
         elseif ( is_page() ) { single_post_title(''); }
-        elseif ( is_search() ) { bloginfo('name'); print ' | Search results for ' . wp_specialchars($s); get_page_number(); }
+        elseif ( is_search() ) { bloginfo('name'); print ' | Search results for "' . esc_html($s) . '"'; get_page_number(); }
         elseif ( is_404() ) { bloginfo('name'); print ' | Not Found'; }
         else { bloginfo('name'); wp_title('|'); get_page_number(); }
     ?></title>
@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 
      
-
+    <?php $settings=get_option('nmsu_theme_options'); ?>
 		<?php $assignCSS=get_bloginfo('template_directory'); ?>
 		<?php if ( is_page_template('1col-page.php')) { 
 			print "<link rel='stylesheet' type='text/css' href='$assignCSS/css/1-column-sidebars-below.css' />";
@@ -59,29 +59,34 @@
         <div class="visually-hidden">New Mexico State University</div>
         <div id="blog-title"><span><a href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="home"><?php bloginfo( 'name' ) ?></a></span></div>
 <?php if ( is_home() || is_front_page() ) { ?>
-                    <h1 id="blog-description"><?php bloginfo( 'description' ) ?></h1>
-<?php } else { ?> 
-                    <div id="blog-description"><?php bloginfo( 'description' ) ?></div>
+                    <p id="blog-description"><?php bloginfo( 'description' ) ?></p>
+<?php } else { ?>
+                    <p id="blog-description"><?php bloginfo( 'description' ) ?></p>
 <?php } ?>
             </div>
       </div>
-      <!-- #masthead -->
-     <!-- <form id="search" action="http://www.nmsu.edu/search_results.php" method="POST">
-        <fieldset>
-          <input type="hidden" name="domains" value="nmsu.edu" />
-          <input type="hidden" name="sitesearch" value="nmsu.edu" />
-          <input type="text" name="q" id="q" value="" placeholder="Search NMSU" />
-          <a onClick="document.getElementById('search').submit()"></a>
-        </fieldset>
-      </form> -->
       
-<!-- #header_widget -->
+      <!-- #masthead -->
+<!-- #header_widget --><!--
 <?php if ( is_sidebar_active('header_widget') ) : ?>
 	<?php dynamic_sidebar('header_widget'); ?>
 	<?php endif; ?>
-
-
-
+-->
+      <div id="search-wrapper">
+     <form id="search" action="<?php bloginfo('url') . '/'?>" method="GET">
+        <fieldset>
+          <input type="hidden" name="domains" value="nmsu.edu" />
+          <input type="hidden" name="sitesearch" value="nmsu.edu" />
+          <?php if ($settings['search_method'] == 'google'): ?>
+          <input type="hidden" name="search_method" value="google" />
+          <?php elseif ($settings['search_method'] == 'google_custom'): ?>
+          <input type="hidden" name="search_method" value="google_custom" />
+        <?php endif; ?>
+          <input type="text" name="s" id="s" value="" placeholder="Search <?php bloginfo('name'); ?>" />
+          <a onClick="document.getElementById('search').submit()"></a>
+        </fieldset>
+      </form>
+      </div>
 
     </header>
     <nav id="horizontal"> 
@@ -95,11 +100,13 @@
       <div id="right-wraparound"></div>
     </nav>
     <div id="main">
-    	
-     <div id="feature"> <img src="<?php bloginfo('template_directory'); ?>/img/swim.jpg" width="960" height="480"> </div>
     <?php
-       
+        /*
+          Leave swim.jpg as a default that can be later improved into a better default image.
+          If a custom image was set we will need the path to the image.
+        */
       ?>
+      <!--<div id="feature"> <img src="<?php bloginfo('template_directory'); ?>/img/swim.jpg" width="960" height="480"> </div>-->
       <?php if ( is_page_template('header-page.php')): ?>
       <div id="feature"> 
       <?php
@@ -115,6 +122,25 @@
       ?>
       </div>
     <!-- #feature -->
-	
-        <?php if(function_exists('simple_breadcrumb')) {simple_breadcrumb();} ?>
-      
+      <?php endif; ?>
+
+	     <?php if ( !is_home() && !is_front_page() && !is_404()): ?>
+       <div id="breadcrumbs"> 
+          <div id="breadcrumb-trail-contents">
+             
+              <div id="breadcrumb-link-list"> 
+                  <ul>
+                      <li><a href="http://www.nmsu.edu">NMSU</a></li>
+                      <li class="site-breadcrumb"><a href="<?php bloginfo('url') ?>"><?php bloginfo('name') ?></a></li>
+                      
+                      <?php display_breadcrumbs(); ?>
+                      
+
+                          <li><a href="<?php the_permalink() ?>"><?php print $post->post_title; ?></a></li>
+                  </ul> 
+              </div> <!-- breadcrumb-link-list --> 
+              <div id="breadcrumb-utility"><span></span></div>
+          </div> <!-- breadcrumb-trail-contents -->
+      </div> <!-- breadcrumb-trail-container --> 
+      <!-- END BREADCRUMB TRAIL -->
+    <?php endif; ?>
