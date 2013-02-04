@@ -536,6 +536,7 @@ nav#horizontal {
 
 /* Basic drop-down menus for the horizontal navigation */
 
+
 #horizontal-menu li ul  {
 	left: -999px;
 	position:absolute;
@@ -560,7 +561,7 @@ nav#horizontal {
 }
 
 #horizontal-menu li ul li a {
-	background:#fff;
+	background: #e3e3e3;
 	left: auto;
 	text-align: left;
 	width: 150px;
@@ -571,27 +572,28 @@ nav#horizontal {
 	color: #882345;
 }
 
+/* Third level of navigation */
+
 #horizontal-menu li li ul {
-        margin: -34px 0 0 176px;
-        visibility:hidden;
+	margin: -34px 0 0 176px;
+	visibility :hidden;
 }
 
 #horizontal-menu li li:hover ul {
-        visibility:visible;
+	visibility: visible;
 }
 
 #horizontal-menu li:hover ul {
-        left: auto;
+	left: auto;
 }
 
 #horizontal-menu a:active,
 #horizontal-menu a:hover {
-        background: #efefef;
+	background: #f3f3f3;
 }
 
 #horizontal-menu li:hover li {
-        background: #3f0;
-        color: #882345;
+	color: #882345;
 }
 
 /* Navigation (vertical menu)
@@ -1195,4 +1197,8 @@ h2.fancy-header {
 	margin-top: -154px;
 	float: right;
 	
+}
+
+.widget-area {
+	vertical-align: top;
 }
