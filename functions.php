@@ -24,8 +24,8 @@ function theme_widgets_init() {
     register_sidebar( array (
     'name' => 'Primary Widget Area',
     'id' => 'primary_widget_area',
-    'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-    'after_widget' => "</li>",
+    'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+    'after_widget' => "</div>",
     'before_title' => '<h3 class="widget-title">',
     'after_title' => '</h3>',
   ) );
@@ -34,8 +34,8 @@ function theme_widgets_init() {
     register_sidebar( array (
     'name' => 'Secondary Widget Area',
     'id' => 'secondary_widget_area', 
-    'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-    'after_widget' => "</li>",
+    'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+    'after_widget' => "</div>",
     'before_title' => '<h3 class="widget-title">',
     'after_title' => '</h3>',
   ) );
@@ -138,9 +138,11 @@ function display_breadcrumbs(){
         $ancestors=array_reverse($post->ancestors);
         foreach($ancestors as $ancestor):
             $apage = $wpdb->get_row("SELECT ID,post_title FROM $wpdb->posts WHERE post_type='page' AND post_status='publish' AND ID=$ancestor;",ARRAY_A);
-            ?><li>
+            $astatus = $wpdb->get_row("SELECT ID,post_status FROM $wpdb->posts WHERE post_type='page' AND post_status='publish' AND ID=$ancestor;",ARRAY_A); ?>
+			<?php if ($astatus[post_status] == 'publish') { ?>
+			?><li>
                 <a href="<?php print get_permalink($apage[ID]); ?>" class="__animated_sidebar_tips" title="<? print $apage['post_title']; ?>"><?php print $apage[post_title] ?></a>
-            </li><?php     
+            </li><?php }  
         endforeach;
     endif;
     

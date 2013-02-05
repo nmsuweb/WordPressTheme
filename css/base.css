@@ -695,6 +695,11 @@ ul#vertical-menu li:last-child {
 	z-index: 10;
 }
 
+#feature img {
+	width:100%;
+	height: auto;
+}
+
 /* For a feature block with an image on the left and text on the right. */
 
 .feature-plus-text {

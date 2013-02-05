@@ -136,7 +136,7 @@
                       <?php display_breadcrumbs(); ?>
                       
 
-                          <li><a href="<?php the_permalink() ?>"><?php print $post->post_title; ?></a></li>
+                        <li><a href="<?php the_permalink() ?>"><?php print $post->post_title; ?></a></li>
                   </ul> 
               </div> <!-- breadcrumb-link-list --> 
               <div id="breadcrumb-utility"><span></span></div>
