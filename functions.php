@@ -140,7 +140,7 @@ function display_breadcrumbs(){
             $apage = $wpdb->get_row("SELECT ID,post_title FROM $wpdb->posts WHERE post_type='page' AND post_status='publish' AND ID=$ancestor;",ARRAY_A);
             $astatus = $wpdb->get_row("SELECT ID,post_status FROM $wpdb->posts WHERE post_type='page' AND post_status='publish' AND ID=$ancestor;",ARRAY_A); ?>
 			<?php if ($astatus[post_status] == 'publish') { ?>
-			?><li>
+			<li>
                 <a href="<?php print get_permalink($apage[ID]); ?>" class="__animated_sidebar_tips" title="<? print $apage['post_title']; ?>"><?php print $apage[post_title] ?></a>
             </li><?php }  
         endforeach;
