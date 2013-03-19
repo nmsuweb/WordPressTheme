@@ -1,0 +1,81 @@
+/* =============================================================================
+   HTML5 element display
+   ========================================================================== */
+
+/*
+ * Corrects block display not defined in IE6/7/8/9 & FF3
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+    display: inline-block; 
+}
+
+html{overflow:auto;}
+
+
+.button{padding:8px 19px 9px 19px;  }
+
+
+nav#horizontal {
+	background-image: url(../img/menu-background.png);
+	background-repeat: repeat-x;
+	}
+	
+header {
+	color: #ccc;
+	height: 270px;
+	background-attachment: fixed;
+	background-color: #882345;
+	background-image: url(../img/swoosh3.png);
+	background-repeat: no-repeat;
+	background-position: 0 60px;
+}
+	
+#left-wraparound {
+	border-top: 10px solid #999;
+	border-left: 10px solid transparent;
+	position: absolute;
+	left: 0;
+	margin-top: -1px;
+}
+
+#right-wraparound {
+	border-top: 10px solid #999;
+	border-right: 10px solid transparent;
+	position: absolute;
+	right: 0;
+	margin-top: -1px;
+}
+
+figure {
+	display: table;
+	margin: 0;
+}
+
+.figure-right {
+	float: right;
+
+}
+
+.figure-left {
+	float: left;
+
+}
+
+.footer-column {
+display: inline-block;
+float: left;
+width: 30.85%;
+margin-right: 3.7%;
+}
+
+.footer-column:last-child {margin-right: 0;}

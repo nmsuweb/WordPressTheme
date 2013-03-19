@@ -4,7 +4,7 @@ Theme URI: http://www.nmsu.edu
 Description: An NMSU branded, search engine optimized website framework for WordPress.
 Author: NMSU Campus Web Group
 Author URI: http://wptheme.nmsu.edu
-Version: 1.0.2
+Version: 1.0.3
 Tags: nmsu, new mexico state university
 */
 
@@ -12,3 +12,4 @@ Tags: nmsu, new mexico state university
 @import url("css/base.css");
 @import url("css/drop-down.css");
 @import url("css/mobile.css");
+@import url("css/wp.css");

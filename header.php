@@ -6,20 +6,23 @@
 <!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither -->
 <head profile="http://gmpg.org/xfn/11">
-    <title><?php
+     <title><?php
         if ( is_single() ) { single_post_title(); }       
-        elseif ( is_home() || is_front_page() ) { bloginfo('name'); print ' | '; bloginfo('description'); get_page_number(); }
-        elseif ( is_page() ) { single_post_title(''); }
+        elseif ( is_home() || is_front_page() ) { bloginfo('name'); print ' | New Mexico State University'; get_page_number(); }
+        elseif ( is_page() || is_single() ) { single_post_title(''); print ' | '; bloginfo('name'); print ' | New Mexico State University'; }
         elseif ( is_search() ) { bloginfo('name'); print ' | Search results for "' . esc_html($s) . '"'; get_page_number(); }
         elseif ( is_404() ) { bloginfo('name'); print ' | Not Found'; }
         else { bloginfo('name'); wp_title('|'); get_page_number(); }
     ?></title>
      
-    <meta http-equiv="content-type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-     
+   
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 
-     
+    <!--[if lt IE 9]>
+   	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/html5.js"></script>
+    	<link rel="stylesheet" type="text/css" media="screen" href="/css/ie.css">
+    <![endif]-->
+
     <?php $settings=get_option('nmsu_theme_options'); ?>
 		<?php $assignCSS=get_bloginfo('template_directory'); ?>
 		<?php if ( is_page_template('1col-page.php')) { 
@@ -63,7 +66,7 @@
 <?php } else { ?>
                     <p id="blog-description"><?php bloginfo( 'description' ) ?></p>
 <?php } ?>
-            </div>
+          
       </div>
       
       <!-- #masthead -->
@@ -87,7 +90,6 @@
         </fieldset>
       </form>
       </div>
-
     </header>
     <nav id="horizontal"> 
     <div class="visually-hidden"><a href="#content" title="<?php _e( 'Skip to content', 'NMSU' ) ?>"><?php _e( 'Skip to content', 'NMSU' ) ?></a></div>
@@ -122,8 +124,9 @@
       ?>
       </div>
     <!-- #feature -->
-      <?php endif; ?>
-
+ <?php endif; ?>
+ <?php if ( is_404()): ?><div id="feature"> <img src="<?php bloginfo('template_directory'); ?>/img/404-page.jpg" width="960" height="480"> </div>
+ <?php endif; ?>
 	     <?php if ( !is_home() && !is_front_page() && !is_404()): ?>
        <div id="breadcrumbs"> 
           <div id="breadcrumb-trail-contents">

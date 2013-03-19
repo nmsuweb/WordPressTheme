@@ -5,11 +5,6 @@
                         
 <?php the_post(); ?>
 
-                                <div id="nav-above" class="navigation">
-                                        <div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">&laquo;</span> %title' ) ?></div>
-                                        <div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">&raquo;</span>' ) ?></div>
-                                </div><!-- #nav-above -->
-
                                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                                         <h1 class="entry-title"><?php the_title(); ?></h1>
                                         
@@ -19,7 +14,7 @@
                                                 <span class="meta-sep"> | </span>
                                                 <span class="meta-prep meta-prep-entry-date"><?php _e('Published ', 'NMSU'); ?></span>
                                                 <span class="entry-date"><abbr class="published" title="<?php the_time('Y-m-d\TH:i:sO') ?>"><?php the_time( get_option( 'date_format' ) ); ?></abbr></span>
-                                                <?php edit_post_link( __( 'Edit', 'NMSU' ), "<span class=\"meta-sep\">|</span>\n\t\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t" ) ?>                                               
+                                                                                          
                                         </div><!-- .entry-meta -->
                                         
                                         <div class="entry-content">
