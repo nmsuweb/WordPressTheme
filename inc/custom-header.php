@@ -158,6 +158,23 @@ function nmsu_theme_admin_header_image() {
 * Layout ( Image + Text )
 **/
 
-function nmsu_theme_header () {
 
+function nmsu_theme_header () {
+  global $header_image_width, $header_image_height;
+  //Get Header settings
+  $header_options = get_option ( "nmsu_theme_options" );
+
+  //Get header_type and display selected type of header
+  if (  !$header_options['header_type'] ) {
+    //Image header was selected 
+    //Return display html for image.
+    return "<img src=\"".get_header_image ( )."\" width=\"".$header_image_width."\" height=\"".$header_image_height."\">";
+  
+  } else {
+    //Shortcode header selected
+    //Return shortcode
+
+    return do_shortcode($header_options['header_plugin-shortcode']);
+  
+  }
 }

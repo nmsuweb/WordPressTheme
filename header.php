@@ -6,6 +6,8 @@
 <!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither -->
 <head profile="http://gmpg.org/xfn/11">
+    <?php $settings=get_option('nmsu_theme_options'); ?>
+
      <title><?php
         if ( is_single() ) { single_post_title(); }       
         elseif ( is_home() || is_front_page() ) { bloginfo('name'); print ' | New Mexico State University'; get_page_number(); }
@@ -17,13 +19,14 @@
      
    
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
-
+	<style type="text/css">
+	<?php echo $settings['custom_css']; ?>
+	</style>
     <!--[if lt IE 9]>
    	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/html5.js"></script>
     	<link rel="stylesheet" type="text/css" media="screen" href="/css/ie.css">
     <![endif]-->
 
-    <?php $settings=get_option('nmsu_theme_options'); ?>
 		<?php $assignCSS=get_bloginfo('template_directory'); ?>
 		<?php if ( is_page_template('1col-page.php')) { 
 			print "<link rel='stylesheet' type='text/css' href='$assignCSS/css/1-column-sidebars-below.css' />";
@@ -112,15 +115,8 @@
       <?php if ( is_page_template('header-page.php')): ?>
       <div id="feature"> 
       <?php
-        if ( is_page ( ) ) {
-      ?>
-        <img src="<?php header_image ( ); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>">
-      <?php
-        } else {
-      ?>
-        <img src="<?php header_image ( ); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>">
-      <?php
-        }
+        //Display selected header type
+        echo nmsu_theme_header ();
       ?>
       </div>
     <!-- #feature -->

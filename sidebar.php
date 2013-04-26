@@ -1,10 +1,12 @@
-<?php if ( has_nav_menu( 'extra-menu' ) ) {
-	wp_nav_menu( array( 'theme_location' => 'extra-menu', 'container_id' => 'vertical', 'container' => 'nav' ) );
-} ?>
+
 
 <?php if ( is_sidebar_active('primary_widget_area') ) : ?>
                 <aside id="sidebar1" class="widget-area">
-                        <ul class="xoxo">
+ <?php if ( has_nav_menu( 'extra-menu' ) ) {
+	wp_nav_menu( array( 'theme_location' => 'extra-menu', 'container_id' => 'vertical-menu' ) );
+} ?>                       
+
+<ul class="xoxo">
                                 <?php dynamic_sidebar('primary_widget_area'); ?>
                         </ul>
                 </aside>
